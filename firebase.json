@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "moodAnalyzer": "app",
+    "": "app",
     "ignore": [
       "firebase.json",
       "**/.*",
