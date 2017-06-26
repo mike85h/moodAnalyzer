@@ -24,24 +24,17 @@ var tone_analyzer = new ToneAnalyzerV3({
   version_date: '2016-05-19'
 });
 
-// console.log(encodedInput);
 var params = {
   text: encodedInput,
   tones: 'emotion'
 };
 
-var resultObj;
-
 tone_analyzer.tone(params, function(error, response) {
   if (error)
     console.log('error:', error);
   else
-    resultStr = JSON.stringify(response, null, 2);
-    console.log(resultStr);
+    // resultStr = JSON.stringify(response, null, 2);
     // console.log(JSON.stringify(response, null, 2));
-    resultObj = response;
-    console.log(resultObj);
-
     var tone1=response.document_tone.tone_categories["0"].tones["0"].tone_name;
     var tone1Num=response.document_tone.tone_categories["0"].tones["0"].score;
 
@@ -57,16 +50,15 @@ tone_analyzer.tone(params, function(error, response) {
     var tone5=response.document_tone.tone_categories["0"].tones[4].tone_name;
     var tone5Num=response.document_tone.tone_categories["0"].tones[4].score;
 
-    console.log(tone1 + " " + tone1Num);
-    console.log(tone2 + " " + tone2Num);
-    console.log(tone3 + " " + tone3Num);
-    console.log(tone4 + " " + tone4Num);
-    console.log(tone5 + " " + tone5Num);
+    resultStr  = (tone1 + " " + tone1Num + "<br>");
+    resultStr += (tone2 + " " + tone2Num + "<br>");
+    resultStr += (tone3 + " " + tone3Num + "<br>");
+    resultStr += (tone4 + " " + tone4Num + "<br>");
+    resultStr += (tone5 + " " + tone5Num + "<br>");
 
 
     if ( $('.responseText').children().length > 0 ) {
       $('.result').remove();
-
       $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
     }else{
       $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
