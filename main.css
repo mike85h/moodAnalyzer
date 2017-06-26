@@ -1,0 +1,15 @@
+#mainInput{
+  width:100%;
+  margin: 0px auto;
+}
+
+#mainButton{
+  display: block;
+  margin: 10px auto;
+}
+
+footer{
+  width:100%;
+  position: absolute;
+  height: 60px;
+}

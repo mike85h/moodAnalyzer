@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>moodAnalyzer</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-      <h1>Mood Analyzer</h1>
-      <input type="text" id="mainInput" class="main" value="Three Words Minimum.">
-      <input type="button" id="mainButton" class="main" value="Get Mood!">
-      <div class="responseText"></div>
+
+      <div class="container">
+        <div class="jumbotron">
+          <h1 class="text-center">Mood Analyzer</h1>
+          <input type="text" id="mainInput" class="main text-center" value="Input text to be analyzed here. 3 Words minimum.">
+          <input type="button" class="btn btn-default main tex-center" id="mainButton" value="Get Mood!">
+        </div>
+      </div>
+      <div class="responseText text-center"></div>
+      <footer class="footer navbar-fixed-bottom">
+        <div class="container">
+          <p class="text-center text-muted">Copyright &copy; AlopexDev 2017</p>
+        </div>
+      </footer>
       <script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-    </script>
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+      </script>
       <!-- <script src="app.js"></script> -->
       <script src="bundle.js"></script>
   </body>
