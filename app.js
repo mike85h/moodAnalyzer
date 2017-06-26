@@ -40,8 +40,29 @@ tone_analyzer.tone(params, function(error, response) {
     // console.log(JSON.stringify(response, null, 2));
     resultObj = response;
     console.log(resultObj);
-    // console.log(response);
-    // console.log(resultObj.document_tone.tone_categories["0"].tones[1].score)
+
+    var tone1=response.document_tone.tone_categories["0"].tones["0"].tone_name;
+    var tone1Num=response.document_tone.tone_categories["0"].tones["0"].score;
+
+    var tone2=response.document_tone.tone_categories["0"].tones[1].tone_name;
+    var tone2Num=response.document_tone.tone_categories["0"].tones[1].score;
+
+    var tone3=response.document_tone.tone_categories["0"].tones[2].tone_name;
+    var tone3Num=response.document_tone.tone_categories["0"].tones[2].score;
+
+    var tone4=response.document_tone.tone_categories["0"].tones[3].tone_name;
+    var tone4Num=response.document_tone.tone_categories["0"].tones[3].score;
+
+    var tone5=response.document_tone.tone_categories["0"].tones[4].tone_name;
+    var tone5Num=response.document_tone.tone_categories["0"].tones[4].score;
+
+    console.log(tone1 + " " + tone1Num);
+    console.log(tone2 + " " + tone2Num);
+    console.log(tone3 + " " + tone3Num);
+    console.log(tone4 + " " + tone4Num);
+    console.log(tone5 + " " + tone5Num);
+
+
     if ( $('.responseText').children().length > 0 ) {
       $('.result').remove();
 
