@@ -43,6 +43,7 @@ tone_analyzer.tone(params, function(error, response) {
     var tone3=response.document_tone.tone_categories["0"].tones[2].tone_name;
     var tone3Num=response.document_tone.tone_categories["0"].tones[2].score;
 
+
     var tone4=response.document_tone.tone_categories["0"].tones[3].tone_name;
     var tone4Num=response.document_tone.tone_categories["0"].tones[3].score;
 
