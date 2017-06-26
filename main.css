@@ -13,3 +13,14 @@ footer{
   position: absolute;
   height: 60px;
 }
+
+body{
+  background-image: url("https://images.unsplash.com/photo-1416431168657-a6c4184348ab");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.responseText>p{
+  color: black;
+  font-size: 2em;
+}
