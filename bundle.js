@@ -41,10 +41,14 @@ tone_analyzer.tone(params, function(error, response) {
     resultObj = response;
     // console.log(response);
     // console.log(resultObj.document_tone.tone_categories["0"].tones[1].score)
-    $('.responseText').append("<p class='text-center'>" + resultStr + "</p>");
-  }
-);
-
+    if ( $('.responseText').children().length > 0 ) {
+      $('.result').remove();
+      
+      $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
+    }else{
+      $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
+    }
+    });
 });
 
 },{"uniq":176,"watson-developer-cloud/tone-analyzer/v3.js":189}],2:[function(require,module,exports){
