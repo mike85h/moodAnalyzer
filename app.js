@@ -36,16 +36,19 @@ tone_analyzer.tone(params, function(error, response) {
     console.log('error:', error);
   else
     resultStr = JSON.stringify(response, null, 2);
+    console.log(resultStr);
     // console.log(JSON.stringify(response, null, 2));
     resultObj = response;
+    console.log(resultObj);
     // console.log(response);
     // console.log(resultObj.document_tone.tone_categories["0"].tones[1].score)
     if ( $('.responseText').children().length > 0 ) {
       $('.result').remove();
-      
+
       $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
     }else{
       $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
     }
+
     });
 });
