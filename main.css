@@ -10,21 +10,24 @@
 
 footer{
   width:100%;
-  position: absolute;
+  position: relative;
   height: 60px;
+  color: black;
+  opacity: 90%;
 }
 
 body{
-  background-image: url(assets/pexels-photo.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-image: url(img/grey-7.jpg);
+  height: 100%;
 }
 
 .responseText>p{
   color: black;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .jumbotron{
   margin-top: 2em;
+  background-color: #C0C0C0;
+  border: 2px solid black;
 }

@@ -1,76 +1,110 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-//created by Michael Harrington
-//encodeURI("string here"); will output string of type needed by watson
+//created by Michael Harrington June 2017
 var unique = require('uniq');
-
 var encodedInput = "";
 
-$('#mainButton').click(function(){
-  var input = $('#mainInput').val();
-  encodedInput = encodeURI(input);
-  encodedInput = '"' + encodedInput + '"'
-  // console.log(encodedInput);
+$("document").ready(function() {
+  $('#mainButton').click(function(){
+    var input = $('#mainInput').val();
+    encodedInput = encodeURI(input);
+    encodedInput = '"' + encodedInput + '"';
 
-// {
-//   "url": "https://gateway.watsonplatform.net/tone-analyzer/api",
-//   "username": "aa44c815-f9e5-45ec-9862-86133587c17a",
-//   "password": "Zzgmqx7IQjf8"
-// }
+    $('.responseText').empty();
 
-var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3.js');
-var tone_analyzer = new ToneAnalyzerV3({
-  username: "d9eebd1b-b1a9-4cd9-94e3-714537281c54",
-  password: "O7yKSnOt2zIM",
-  version_date: '2016-05-19'
-});
-
-var params = {
-  text: encodedInput,
-  // tones: 'emotion'
-};
-
-tone_analyzer.tone(params, function(error, response) {
-  if (error)
-    console.log('error:', error);
-  else
-    console.log(response);
-    // resultStr = JSON.stringify(response, null, 2);
-    // console.log(JSON.stringify(response, null, 2));
-    // var tone1=response.document_tone.tone_categories["0"].tones["0"].tone_name;
-    // var tone1Num=response.document_tone.tone_categories["0"].tones["0"].score;
-    //
-    // var tone2=response.document_tone.tone_categories["0"].tones[1].tone_name;
-    // var tone2Num=response.document_tone.tone_categories["0"].tones[1].score;
-    //
-    // var tone3=response.document_tone.tone_categories["0"].tones[2].tone_name;
-    // var tone3Num=response.document_tone.tone_categories["0"].tones[2].score;
-    //
-    //
-    // var tone4=response.document_tone.tone_categories["0"].tones[3].tone_name;
-    // var tone4Num=response.document_tone.tone_categories["0"].tones[3].score;
-    //
-    // var tone5=response.document_tone.tone_categories["0"].tones[4].tone_name;
-    // var tone5Num=response.document_tone.tone_categories["0"].tones[4].score;
-    //
-    // resultStr  = (tone1 + " " + tone1Num + "<br>");
-    // resultStr += (tone2 + " " + tone2Num + "<br>");
-    // resultStr += (tone3 + " " + tone3Num + "<br>");
-    // resultStr += (tone4 + " " + tone4Num + "<br>");
-    // resultStr += (tone5 + " " + tone5Num + "<br>");
-
-    //for testing only:
-    var resultStr = "placeholder";
-    //
-
-
-    if ( $('.responseText').children().length > 0 ) {
-      $('.result').remove();
-      $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
-    }else{
-      $('.responseText').append("<p class='text-center result'>" + resultStr + "</p>");
-    }
-
+    var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3.js');
+    var tone_analyzer = new ToneAnalyzerV3({
+      username: "d9eebd1b-b1a9-4cd9-94e3-714537281c54",
+      password: "O7yKSnOt2zIM",
+      version_date: '2016-05-19'
     });
+
+    var params = {
+      text: encodedInput
+    };
+
+    tone_analyzer.tone(params, function(error, response) {
+      if (error)
+        console.log('error:', error);
+      else
+        //emotional tones:
+        var emotionResultStr = "";
+        var emTone1 = response.document_tone.tone_categories[0].tones[0].tone_name;
+        var emTone1Num = 100*(response.document_tone.tone_categories[0].tones[0].score);
+
+        var emTone2 = response.document_tone.tone_categories[0].tones[1].tone_name;
+        var emTone2Num = 100*(response.document_tone.tone_categories[0].tones[1].score);
+
+        var emTone3 = response.document_tone.tone_categories[0].tones[2].tone_name;
+        var emTone3Num = 100*(response.document_tone.tone_categories[0].tones[2].score);
+
+        var emTone4 = response.document_tone.tone_categories[0].tones[3].tone_name;
+        var emTone4Num = 100*(response.document_tone.tone_categories[0].tones[3].score);
+
+        var emTone5 = response.document_tone.tone_categories[0].tones[4].tone_name;
+        var emTone5Num = 100*(response.document_tone.tone_categories[0].tones[4].score);
+
+        emotionResultStr += (emTone1 + ": " + emTone1Num + "<br>");
+        emotionResultStr += (emTone2 + ": " + emTone2Num + "<br>");
+        emotionResultStr += (emTone3 + ": " + emTone3Num + "<br>");
+        emotionResultStr += (emTone4 + ": " + emTone4Num + "<br>");
+        emotionResultStr += (emTone5 + ": " + emTone5Num + "<br>");
+
+        //language tones:
+        var languageResultStr = "";
+        var lanTone1 = response.document_tone.tone_categories[1].tones[0].tone_name;
+        var lanTone1Num = 100*(response.document_tone.tone_categories[1].tones[0].score);
+
+        var lanTone2 = response.document_tone.tone_categories[1].tones[1].tone_name;
+        var lanTone2Num = 100*(response.document_tone.tone_categories[1].tones[1].score);
+
+        var lanTone3 = response.document_tone.tone_categories[1].tones[2].tone_name;
+        var lanTone3Num = 100*(response.document_tone.tone_categories[1].tones[2].score);
+
+        languageResultStr += (lanTone1 + ": " + lanTone1Num + "<br>");
+        languageResultStr += (lanTone2 + ": " + lanTone2Num + "<br>");
+        languageResultStr += (lanTone3 + ": " + lanTone3Num + "<br>");
+
+        //social tones:
+        var socialResultStr = "";
+        var socTone1 = response.document_tone.tone_categories[2].tones[0].tone_name;
+        var socTone1Num = 100*(response.document_tone.tone_categories[2].tones[0].score);
+
+        var socTone2 = response.document_tone.tone_categories[2].tones[1].tone_name;
+        var socTone2Num = 100*(response.document_tone.tone_categories[2].tones[1].score);
+
+        var socTone3 = response.document_tone.tone_categories[2].tones[2].tone_name;
+        var socTone3Num = 100*(response.document_tone.tone_categories[2].tones[2].score);
+
+        var socTone4 = response.document_tone.tone_categories[2].tones[3].tone_name;
+        var socTone4Num = 100*(response.document_tone.tone_categories[2].tones[3].score);
+
+        var socTone5 = response.document_tone.tone_categories[2].tones[4].tone_name;
+        var socTone5Num = 100*(response.document_tone.tone_categories[2].tones[4].score);
+
+        socialResultStr += (socTone1 + ": " + socTone1Num + "<br>");
+        socialResultStr += (socTone2 + ": " + socTone2Num + "<br>");
+        socialResultStr += (socTone3 + ": " + socTone3Num + "<br>");
+        socialResultStr += (socTone4 + ": " + socTone4Num + "<br>");
+        socialResultStr += (socTone5 + ": " + socTone5Num + "<br>");
+
+        $('.navbar-fixed-bottom').addClass('navbar-bottom').removeClass('navbar-fixed-bottom');
+
+        $('.responseText').append("<h2 class= 'text-center'>Results:</h2>")
+        $('.responseText').append("<h3 class= 'text-center'>Scores over 75 mean the metric is very likely meant/perceived. Scores under 50 mean the metric is unlikely present.</h3>");
+          $('.responseText').append("<div class= 'container outsideWrapper'></div>");
+            $('.outsideWrapper').append("<div class= 'resultBox row'></div>");
+              $('.resultBox').append("<div class= 'col-md-4 emResultColumn'></div>");
+                $('.emResultColumn').append("<h3>Emotion</h3>");
+                $('.emResultColumn').append("<p class= 'text-center' id= 'emResult'>" + emotionResultStr + "</p>");
+              $('.resultBox').append("<div class='col-md-4 lanResultColumn'></div>");
+                $('.lanResultColumn').append("<h3>Language</h3>");
+                $('.lanResultColumn').append("<p class='text-center' id='lanResult'>" + languageResultStr + "</p>");
+              $('.resultBox').append("<div class='col-md-4 socResultColumn'></div>");
+                $('.socResultColumn').append("<h3>Social</h3>");
+                $('.socResultColumn').append("<p class='text-center' id='socResult'>" + socialResultStr + "</p>");
+      
+    });
+  });
 });
 
 },{"uniq":176,"watson-developer-cloud/tone-analyzer/v3.js":189}],2:[function(require,module,exports){
