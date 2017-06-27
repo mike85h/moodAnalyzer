@@ -15,7 +15,7 @@ footer{
 }
 
 body{
-  background-image: url("https://images.unsplash.com/photo-1416431168657-a6c4184348ab");
+  background-image: url(assets/pexels-photo.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -23,4 +23,8 @@ body{
 .responseText>p{
   color: black;
   font-size: 2em;
+}
+
+.jumbotron{
+  margin-top: 2em;
 }

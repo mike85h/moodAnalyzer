@@ -26,36 +26,41 @@ var tone_analyzer = new ToneAnalyzerV3({
 
 var params = {
   text: encodedInput,
-  tones: 'emotion'
+  // tones: 'emotion'
 };
 
 tone_analyzer.tone(params, function(error, response) {
   if (error)
     console.log('error:', error);
   else
+    console.log(response);
     // resultStr = JSON.stringify(response, null, 2);
     // console.log(JSON.stringify(response, null, 2));
-    var tone1=response.document_tone.tone_categories["0"].tones["0"].tone_name;
-    var tone1Num=response.document_tone.tone_categories["0"].tones["0"].score;
+    // var tone1=response.document_tone.tone_categories["0"].tones["0"].tone_name;
+    // var tone1Num=response.document_tone.tone_categories["0"].tones["0"].score;
+    //
+    // var tone2=response.document_tone.tone_categories["0"].tones[1].tone_name;
+    // var tone2Num=response.document_tone.tone_categories["0"].tones[1].score;
+    //
+    // var tone3=response.document_tone.tone_categories["0"].tones[2].tone_name;
+    // var tone3Num=response.document_tone.tone_categories["0"].tones[2].score;
+    //
+    //
+    // var tone4=response.document_tone.tone_categories["0"].tones[3].tone_name;
+    // var tone4Num=response.document_tone.tone_categories["0"].tones[3].score;
+    //
+    // var tone5=response.document_tone.tone_categories["0"].tones[4].tone_name;
+    // var tone5Num=response.document_tone.tone_categories["0"].tones[4].score;
+    //
+    // resultStr  = (tone1 + " " + tone1Num + "<br>");
+    // resultStr += (tone2 + " " + tone2Num + "<br>");
+    // resultStr += (tone3 + " " + tone3Num + "<br>");
+    // resultStr += (tone4 + " " + tone4Num + "<br>");
+    // resultStr += (tone5 + " " + tone5Num + "<br>");
 
-    var tone2=response.document_tone.tone_categories["0"].tones[1].tone_name;
-    var tone2Num=response.document_tone.tone_categories["0"].tones[1].score;
-
-    var tone3=response.document_tone.tone_categories["0"].tones[2].tone_name;
-    var tone3Num=response.document_tone.tone_categories["0"].tones[2].score;
-
-
-    var tone4=response.document_tone.tone_categories["0"].tones[3].tone_name;
-    var tone4Num=response.document_tone.tone_categories["0"].tones[3].score;
-
-    var tone5=response.document_tone.tone_categories["0"].tones[4].tone_name;
-    var tone5Num=response.document_tone.tone_categories["0"].tones[4].score;
-
-    resultStr  = (tone1 + " " + tone1Num + "<br>");
-    resultStr += (tone2 + " " + tone2Num + "<br>");
-    resultStr += (tone3 + " " + tone3Num + "<br>");
-    resultStr += (tone4 + " " + tone4Num + "<br>");
-    resultStr += (tone5 + " " + tone5Num + "<br>");
+    //for testing only:
+    var resultStr = "placeholder";
+    //
 
 
     if ( $('.responseText').children().length > 0 ) {
