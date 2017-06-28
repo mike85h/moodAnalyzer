@@ -17,8 +17,11 @@ footer{
 }
 
 body{
-  background-image: url(img/grey-7.jpg);
+  /*background-image: url(img/grey-7.jpg);*/
+  background-color: #f7f7f7;
   height: 100%;
+  font-family: 'Abhaya Libre';font-size: 22px;
+
 }
 
 .responseText>p{
@@ -27,7 +30,13 @@ body{
 }
 
 .jumbotron{
-  margin-top: 2em;
+  margin-top: 3em;
   background-color: #C0C0C0;
   border: 2px solid black;
+  font-family: serif;
 }
+
+/*canvas{
+  width: 400px;
+  height: 400px;
+}*/

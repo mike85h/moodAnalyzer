@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Abhaya Libre' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>moodAnalyzer</title>
@@ -9,30 +10,49 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-      <div class="container">
-        <div class="jumbotron">
-          <h1 class="text-center">Mood Analyzer</h1>
-          <input type="text" id="mainInput" class="main text-center form-control" placeholder="Input text to be analyzed here" autofocus>
-          <input type="button" class="btn btn-primary main text-center" id="mainButton" value="Get Mood!">
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="text-center">Mood Analyzer</h1>
+        <input type="text" id="mainInput" class="main text-center form-control" placeholder="Input text to be analyzed here" autofocus>
+        <input type="button" class="btn btn-primary main text-center" id="mainButton" value="Get Mood!">
+      </div>
+    </div>
+    <div>
+      <h4 class="text-center">Confused by a text or email? Enter it above and get some insight into the sender's mood.</h4>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <canvas id="emChart"></canvas>
+        </div>
+        <div class="col-md-4">
+          <canvas id="langChart"></canvas>
+        </div>
+        <div class="col-md-4">
+          <canvas id="socChart"></canvas>
         </div>
       </div>
-      <div>
-        <h4 class="text-center">Mood Analyzer will take any text and predict the motivation behind it. The results can be used to predict what a sender meant or how a recipient may receive some text. This tool is only for entertainment purposes and is not intended to be used for the diagnosis of mental disease. Results will populate below:</h4>
-      </div>
-      <div class="responseText text-center">
+    </div>
+    <div class="responseText text-center">
         <!--append results here-->
+    </div>
+    <footer class="footer navbar-fixed-bottom">
+      <div class="container">
+        <p class="text-center text-muted">Copyright &copy; AlopexDev 2017</p>
       </div>
-      <footer class="footer navbar-fixed-bottom">
-        <div class="container">
-          <p class="text-center text-muted">Copyright &copy; AlopexDev 2017</p>
-        </div>
-      </footer>
-      <script
-        src="https://code.jquery.com/jquery-3.2.1.js"
-        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-        crossorigin="anonymous">
-      </script>
-      <!-- <script src="app.js"></script> -->
-      <script src="bundle.js"></script>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous">
+    </script>
+    <!-- <script type="text/javascript" src="Chart.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js">
+    </script>
+      <!-- <script src="app.js"></script> deprecated for use with browserify-->
+    <script src="bundle.js"></script>
+    </script>
   </body>
 </html>
