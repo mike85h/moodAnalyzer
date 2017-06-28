@@ -13,18 +13,22 @@ footer{
   position: relative;
   height: 60px;
   color: black;
-  opacity: 90%;
+  margin-top: 3em;
 }
 
 body{
-  /*background-image: url(img/grey-7.jpg);*/
   background-color: #f7f7f7;
   height: 100%;
   font-family: 'Abhaya Libre';font-size: 22px;
 
 }
 
+.responseText{
+    margin-top: 5em;
+}
+
 .responseText>p{
+
   color: black;
   font-size: 3em;
 }
@@ -36,7 +40,7 @@ body{
   font-family: serif;
 }
 
-/*canvas{
-  width: 400px;
-  height: 400px;
-}*/
+.instruction{
+  margin-top: 1em;
+  margin-bottom: 4em;
+}

@@ -89,16 +89,16 @@ $("document").ready(function() {
         $('.navbar-fixed-bottom').addClass('navbar-bottom').removeClass('navbar-fixed-bottom');
 
         $('.responseText').append("<h2 class= 'text-center'>Results:</h2>")
-        $('.responseText').append("<h3 class= 'text-center'>Scores over 75 mean the metric is very likely meant/perceived. Scores under 50 mean the metric is unlikely present.</h3>");
+        $('.responseText').append("<h3 class= 'text-center'>*Note: Scores over 75 mean the metric is very likely meant/perceived. Scores under 50 mean the metric is unlikely present.</h3>");
           $('.responseText').append("<div class= 'container outsideWrapper'></div>");
             $('.outsideWrapper').append("<div class= 'resultBox row'></div>");
-              $('.resultBox').append("<div class= 'col-md-4 emResultColumn'></div>");
+              $('.resultBox').append("<div class= 'col-md-6 emResultColumn'></div>");
                 $('.emResultColumn').append("<h3>Emotion</h3>");
                 $('.emResultColumn').append("<p class= 'text-center' id= 'emResult'>" + emotionResultStr + "</p>");
-              $('.resultBox').append("<div class='col-md-4 lanResultColumn'></div>");
-                $('.lanResultColumn').append("<h3>Language</h3>");
-                $('.lanResultColumn').append("<p class='text-center' id='lanResult'>" + languageResultStr + "</p>");
-              $('.resultBox').append("<div class='col-md-4 socResultColumn'></div>");
+              // $('.resultBox').append("<div class='col-md-4 lanResultColumn'></div>");
+              //   $('.lanResultColumn').append("<h3>Language</h3>");
+              //   $('.lanResultColumn').append("<p class='text-center' id='lanResult'>" + languageResultStr + "</p>");
+              $('.resultBox').append("<div class='col-md-6 socResultColumn'></div>");
                 $('.socResultColumn').append("<h3>Social</h3>");
                 $('.socResultColumn').append("<p class='text-center' id='socResult'>" + socialResultStr + "</p>");
 
@@ -110,7 +110,7 @@ $("document").ready(function() {
             data: {
               labels: [emTone1, emTone2, emTone3, emTone4, emTone5],
               datasets: [{
-                label: 'Emotional',
+                // label: 'Emotional',
                 data: [emTone1Num, emTone2Num, emTone3Num, emTone4Num, emTone5Num],
                 backgroundColor: [
                   'Red',
@@ -130,61 +130,68 @@ $("document").ready(function() {
               }]
             },
             options: {
+              legend: {
+                display:false
+              },
+              title: {
+                display: true,
+                text: 'Emotional Tones'
+              },
               scales: {
-                  yAxes: [{
-                      ticks: {
-                          beginAtZero:true,
-                          min:0,
-                          max:100
-                      }
-                  }]
-              }
-          }
-      });
-
-      //lang chart
-      var ctx = document.getElementById("langChart").getContext('2d');
-      var myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: [lanTone1, lanTone2 ,lanTone3 ],
-            datasets: [{
-              label: 'Language',
-              data: [lanTone1Num, lanTone2Num, lanTone3],
-              backgroundColor: [
-                'Red',
-                'Green',
-                'Blue'
-              ],
-              borderColor: [
-                'Red',
-                'Green',
-                'Blue'
-              ],
-                borderWidth: 0
-            }]
-          },
-          options: {
-            scales: {
                 yAxes: [{
-                    ticks: {
-                      beginAtZero:true,
+                  ticks: {
+                    beginAtZero:true,
                       min:0,
                       max:100
-                    }
+                  }
                 }]
+              }
             }
-        }
-    });
+          });
+
+      //lang chart
+    //   var ctx = document.getElementById("langChart").getContext('2d');
+    //   var myChart = new Chart(ctx, {
+    //       type: 'bar',
+    //       data: {
+    //         labels: [lanTone1, lanTone2 ,lanTone3 ],
+    //         datasets: [{
+    //           label: 'Language',
+    //           data: [lanTone1Num, lanTone2Num, lanTone3],
+    //           backgroundColor: [
+    //             'Red',
+    //             'Green',
+    //             'Blue'
+    //           ],
+    //           borderColor: [
+    //             'Red',
+    //             'Green',
+    //             'Blue'
+    //           ],
+    //             borderWidth: 0
+    //         }]
+    //       },
+    //       options: {
+    //         scales: {
+    //             yAxes: [{
+    //                 ticks: {
+    //                   beginAtZero:true,
+    //                   min:0,
+    //                   max:100
+    //                 }
+    //             }]
+    //         }
+    //     }
+    // });
 
     // soc chart
     var ctx = document.getElementById("socChart").getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'horizontalBar',
         data: {
           labels: [socTone1, socTone2, socTone3, socTone4, socTone5],
           datasets: [{
-            label: 'Social',
+            // showlabel: '',
             data: [socTone1Num, socTone2Num, socTone3Num, socTone4Num, socTone5Num],
             backgroundColor: [
               'Red',
@@ -204,8 +211,15 @@ $("document").ready(function() {
           }]
         },
         options: {
+          legend: {
+            display:false
+          },
+          title: {
+            display: true,
+            text: 'Social Tones'
+          },
           scales: {
-              yAxes: [{
+              xAxes: [{
                   ticks: {
                     beginAtZero:true,
                     min:0,
