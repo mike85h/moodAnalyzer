@@ -87,8 +87,7 @@ $("document").ready(function() {
         socialResultStr += (socTone5 + ": " + socTone5Num + "<br>");
 
         $('.navbar-fixed-bottom').addClass('navbar-bottom').removeClass('navbar-fixed-bottom');
-
-        $('.responseText').append("<h2 class= 'text-center'>Results:</h2>")
+        $('.instruction').append("<h2 class= 'text-center'>Results:</h2>")
         $('.responseText').append("<h3 class= 'text-center'>*Note: Scores over 75 mean the metric is very likely meant/perceived. Scores under 50 mean the metric is unlikely present.</h3>");
           $('.responseText').append("<div class= 'container outsideWrapper'></div>");
             $('.outsideWrapper').append("<div class= 'resultBox row'></div>");
