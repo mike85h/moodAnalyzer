@@ -109,32 +109,34 @@ $("document").ready(function() {
         var emChart = new Chart(ctx, {
             type: 'bar',
             data: {
-              labels: ["Anger", "Disgust", "Fear", "Joy", "Sadness"],
+              labels: [emTone1, emTone2, emTone3, emTone4, emTone5],
               datasets: [{
                 label: 'Emotional',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [emTone1Num, emTone2Num, emTone3Num, emTone4Num, emTone5Num],
                 backgroundColor: [
                   'Red',
-                  'Brown',
+                  'Saddlebrown',
                   'Yellow',
                   'Green',
                   'Purple',
                 ],
                 borderColor: [
                   'Red',
-                  'Brown',
+                  'Saddlebrown',
                   'Yellow',
                   'Green',
                   'Purple',
                 ],
-                  borderWidth: 1
+                  borderWidth: 0
               }]
             },
             options: {
               scales: {
                   yAxes: [{
                       ticks: {
-                          beginAtZero:true
+                          beginAtZero:true,
+                          min:0,
+                          max:100
                       }
                   }]
               }
@@ -146,34 +148,30 @@ $("document").ready(function() {
       var myChart = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ["Analytical", "Confident", "Tentative"],
+            labels: [lanTone1, lanTone2 ,lanTone3 ],
             datasets: [{
               label: 'Language',
-              data: [12, 19, 3, 5, 2, 3],
+              data: [lanTone1Num, lanTone2Num, lanTone3],
               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'Red',
+                'Green',
+                'Blue'
               ],
               borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'Red',
+                'Green',
+                'Blue'
               ],
-                borderWidth: 1
+                borderWidth: 0
             }]
           },
           options: {
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero:true
+                      beginAtZero:true,
+                      min:0,
+                      max:100
                     }
                 }]
             }
@@ -185,34 +183,34 @@ $("document").ready(function() {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["Openness", "Conscientiousness", "Extraversion", "Agreeableness", "Emotional Range"],
+          labels: [socTone1, socTone2, socTone3, socTone4, socTone5],
           datasets: [{
             label: 'Social',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [socTone1Num, socTone2Num, socTone3Num, socTone4Num, socTone5Num],
             backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
+              'Red',
+              'Blue',
+              'Green',
+              'Yellow',
+              'Purple'
             ],
             borderColor: [
-              'rgba(255,99,132,1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
+              'Red',
+              'Blue',
+              'Green',
+              'Yellow',
+              'Purple'
             ],
-              borderWidth: 1
+              borderWidth: 0
           }]
         },
         options: {
           scales: {
               yAxes: [{
                   ticks: {
-                      beginAtZero:true
+                    beginAtZero:true,
+                    min:0,
+                    max:100
                   }
               }]
           }
