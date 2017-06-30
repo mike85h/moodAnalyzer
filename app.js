@@ -113,18 +113,18 @@ $("document").ready(function() {
                 // label: 'Emotional',
                 data: [emTone1Num, emTone2Num, emTone3Num, emTone4Num, emTone5Num],
                 backgroundColor: [
-                  'Red',
-                  'Saddlebrown',
-                  'Yellow',
-                  'Green',
-                  'Purple',
+                  '#5DA5DA',
+                  '#FAA43A',
+                  '#60BD68',
+                  '#B276B2',
+                  '#F15854',
                 ],
                 borderColor: [
-                  'Red',
-                  'Saddlebrown',
-                  'Yellow',
-                  'Green',
-                  'Purple',
+                  '#5DA5DA',
+                  '#FAA43A',
+                  '#60BD68',
+                  '#B276B2',
+                  '#F15854',
                 ],
                   borderWidth: 0
               }]
@@ -194,18 +194,18 @@ $("document").ready(function() {
             // showlabel: '',
             data: [socTone1Num, socTone2Num, socTone3Num, socTone4Num, socTone5Num],
             backgroundColor: [
-              'Red',
-              'Blue',
-              'Green',
-              'Yellow',
-              'Purple'
+              '#5DA5DA',
+              '#FAA43A',
+              '#60BD68',
+              '#B276B2',
+              '#F15854'
             ],
             borderColor: [
-              'Red',
-              'Blue',
-              'Green',
-              'Yellow',
-              'Purple'
+              '#5DA5DA',
+              '#FAA43A',
+              '#60BD68',
+              '#B276B2',
+              '#F15854'
             ],
               borderWidth: 0
           }]
