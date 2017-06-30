@@ -1,5 +1,6 @@
 # Mood Analyzer
 An application that allows a user to input up to 128kb of text in English or French and outputs an analysis of the tone of the text. Can be used for any purpose and with any text i.e. establish an analysis of received or sent (or pending) text messages, emails, etc.
+![Screenshot of Application](/pics/screenshot1)
 
 ## Table of Contents
 
@@ -9,7 +10,7 @@ An application that allows a user to input up to 128kb of text in English or Fre
 
 ### Dependencies
 **[Back to top](#table-of-contents)**
-This application is bundled with Browserify to force requires to function. Uses watson API and Node.js. Current version Requires use of a CORS plugin (e.g.'Allow-Control-Allow-Origin' plugin for Chrome).
+This application is bundled with Browserify to force requires to function. Uses watson API and Node.js. Current version Requires use of a CORS plugin (e.g.'Allow-Control-Allow-Origin' plugin for Chrome). npm.
 
 ## Contributing
 Must use CORS plugin to allow cross-origin requests.
