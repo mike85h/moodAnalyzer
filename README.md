@@ -2,6 +2,8 @@
 My first deployed application:
 
 An application that allows a user to input up to 128kb of text in English or French and outputs an analysis of the tone of the text. Can be used for any purpose and with any text i.e. establish an analysis of received or sent (or pending) text messages, emails, etc.
+
+Watson API License has since expired. To see functionality of code, please watch:
 ![Demo Video](https://www.youtube.com/watch?v=ZMJeBBcmzrg)
 
 
